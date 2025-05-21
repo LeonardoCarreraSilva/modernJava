@@ -15,17 +15,6 @@ public class BiConsumerExample {
         studentList.forEach((student -> biConsumer.accept(student.getName(), student.getActivities())));
     }
 
-    public static void filterNameAdan() {
-        BiConsumer<String, Double> biConsumer = (name, gradeLevel) -> {
-            if(name.equals("Adan")){
-                System.out.println("Name: " + name + " GradeLevel: " + gradeLevel);
-            }
-        };
-
-        List<Student> studentList = StudentDataBase.getAllStudents();
-        studentList.forEach((student -> biConsumer.accept("Jonas", 4.0)));
-    }
-
     public static void main(String[] args) {
         BiConsumer<String, String> biConsumer = (a, b) -> {
             System.out.println("A: " + a);
@@ -44,7 +33,6 @@ public class BiConsumerExample {
 
         multiply.andThen(division).accept(10, 5);
 
-//        nameAndActivities();
-        filterNameAdan();
+        nameAndActivities();
     }
 }
